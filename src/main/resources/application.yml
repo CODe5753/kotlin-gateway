@@ -28,4 +28,9 @@ spring:
           filters:
 #            - AddRequestHeader=second-request, second-requests-header2
 #            - AddResponseHeader=second-response, second-response-header2
-            - CustomFilter
+            - name: CustomFilter
+            - name: LoggingFilter
+              args:
+                baseMessage: Logging Filter
+                preLogger: true
+                postLogger: true
