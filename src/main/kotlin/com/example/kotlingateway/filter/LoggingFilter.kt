@@ -30,7 +30,7 @@ class LoggingFilter : AbstractGatewayFilterFactory<LoggingFilter.Config>(Config:
                     log.info("Logging POST Filter: response code -> {}", response.statusCode)
                 }
             })
-        }, Ordered.HIGHEST_PRECEDENCE)  // 우선 순위가 가장 높아서 Global 보다 먼저 실행됨
+        }, Ordered.LOWEST_PRECEDENCE)  // 우선 순위가 가장 높아서 Global 보다 먼저 실행됨
         return filter
     }
 
